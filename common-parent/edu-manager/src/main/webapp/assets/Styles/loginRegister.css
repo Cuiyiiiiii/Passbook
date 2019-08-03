@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/*整体*/
+body 
+{
+	background-color: white;
+}
+/*页面头部*/
+div.header
+{
+	height:100px;
+	margin:0 10%;
+	position:relative;
+}
+/*头部导航栏样式*/
+div.titleGuide
+{
+	padding-bottom:5px;
+	border-bottom:2px solid #FDD9A3;
+}
+/*导航栏内容*/
+li
+{
+	float:right;
+}
+
+/*菜单内容连接平常的状态及连接被访问过之后的状态*/
+.menu:link,.menu:visited,.menu:focus
+{
+	display:block;
+	width:80px;
+	font-weight:bold;
+	color:#B07A48;
+	background-color:#FFFFFF;
+	text-align:center;
+	padding:5px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+/*菜单内鼠标放到连接上的时候的状态及连接被按下的时候*/
+.menu:hover,.menu:active,.menu:focus
+{
+	border-bottom:3px solid #F29500;
+}
+
+/*登录注册按钮组*/
+.choiceGroup
+{
+	margin:0px auto;
+	width:320px;
+	padding:10px;
+	text-align: center;
+
+}
+/*登录注册按钮样式*/
+.choiceGroupBackgound
+{
+	background-color: #EBAA49;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-weight:bold;
+	font-size: 14px;
+	cursor: pointer;
+	float: left;
+	width:160px;
+	height:35px;
+	align-items: center;
+}
+
+/*登录注册按钮被选中时*/
+.btnSelected:focus
+{
+	background-color: #B07A48;
+	color: #303133;
+}
+
+/*登录和注册内容背景样式*/
+.LoginBody,.RegisterBody
+{
+	background: rgba(235, 170, 73, 0.5);
+	margin:0px auto;
+	width: 320px;
+    text-align: center;
+}
+/*登录内容背景样式*/
+.loginBody
+{
+	height:300px;
+}
+/*注册内容背景样式*/
+.RegisterBody
+{
+	height:400px;
+}
+/*登录内容输入框样式*/
+.inputInfo
+{
+	margin:20px 10px;
+}
+/*注册内容输入框样式*/
+.rinputInfo
+{
+	margin:10px 10px;
+}
+/*登录和注册内容输入框样式*/
+.inputInfo,.rinputInfo
+{
+	border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 22px;
+    padding-left:5px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+/*登录和注册内容输入框被选中的状态*/
+.inputInfo:focus,.rinputInfo:focus
+{
+    border-color: #F29500;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(242,194,0,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(242,194,0,.6);
+}
+/*登录小图标样式*/
+img
+{
+	width:18px;
+   	height:18px;
+   	margin:-3px auto;
+}
+/*忘记和记住密码板块背景样式*/
+.checkboxBody
+{
+	margin-left:50px;
+	margin-right:50px;
+}
+/*记住密码多选框样式*/
+.checkBox
+{
+	float:left;
+	-webkit-appearance: none; 
+    -moz-appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+	background-color: #F29500;
+	
+}
+/*记住密码多选框被选中的状态*/
+.checkBox:checked::before
+{
+	content: "\2713";
+	color:#FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+}
+/*记住密码多选框标签*/
+.checkValue
+{
+	float:left;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+/*忘记密码超链接样式*/
+.forget
+{
+	float:right;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+/*忘记密码超链接鼠标放到连接上的时候和连接被按下的时候状态*/
+.forget:hover,.forget:active
+{
+	color:#F29500;
+}
+/*注册内容标签样式和性别标签样式*/
+.needInput,.sex
+{
+	font-size: 14px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+/*性别单选框样式*/
+.choiceSexbtn
+{
+	margin-left:60px;
+	margin-top:10px;
+}
+/*登录/注册提交按钮板块背景*/
+.submitBody
+{
+	margin-left:50px;
+	margin-right:50px;
+}
+/*登录/注册提交按钮样式*/
+.submitButton
+{
+	background-color: #F29500;
+    border: none;
+    color: white;
+    padding: 8px 22px;
+    width:100%;
+    text-align: center;
+    display: inline-block;
+    margin: 20px auto;
+    border-radius: 22px;
+    font-size: 18px;
+}
+/*登录/注册提交按钮被鼠标放到连接上的时候状态*/
+.submitButton:hover 
+{
+    background-color: #EBAA49;
+    color: white;
+}
+/*底部样式*/
+.bottom
+{
+	height:30px;
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+	position: fixed;
+	bottom: 0;
+	background: rgba(235, 170, 73, 0.5);
+	color:#ffffff;
+	text-align: center;
+}
+
+.titleGuide ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-image: url("../Images/passBook.png");
+	background-size: 90% 120%;
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 30px;
+}

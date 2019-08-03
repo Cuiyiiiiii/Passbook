@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xx.edu.mapper.UserMapper">
+
+    <select id="findById" resultType="User" parameterType="int">
+        SELECT * FROM userinfo WHERE userId = #{userId}
+    </select>
+
+    <select id="findByUUId" resultType="User" parameterType="String">
+        SELECT * FROM userinfo WHERE userId = #{userId}
+    </select>
+
+    <select id="findByName" resultType="User" parameterType="String">
+        SELECT * FROM userinfo WHERE userName = #{userName}
+    </select>
+
+    <insert id="insert" parameterType="User">
+        INSERT INTO userinfo VALUES (#{userId}, #{userName}, #{password}, #{email}, #{tel}, #{profilePhoto}, null);
+    </insert>
+
+    <insert id="comment" parameterType="com.xx.edu.model.Comment">
+        INSERT INTO comment VALUES (NULL ,#{userId}, #{userName}, #{bookId},#{content})
+    </insert>
+
+    <update id="update" parameterType="User">
+        UPDATE userinfo SET userName = #{userName}, password = #{password}, email = #{email}, tel = #{tel} ,profilePhoto = #{profilePhoto}, favorites = #{favorites}
+        WHERE userId = #{userId}
+    </update>
+
+    <select id="findRequestById" parameterType="int" resultType="com.xx.edu.model.Request">
+        SELECT * FROM request WHERE requestId = #{requestId}
+    </select>
+
+    <update id="agree" parameterType="com.xx.edu.model.Request">
+        UPDATE request SET state = #{state}
+    </update>
+
+    <select id="getCommentsByBookId" parameterType="int" resultType="com.xx.edu.model.Comment">
+        SELECT * FROM comment WHERE bookId = #{bookId}
+    </select>
+</mapper>

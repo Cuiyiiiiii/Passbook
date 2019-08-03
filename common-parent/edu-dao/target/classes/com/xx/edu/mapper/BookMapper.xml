@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xx.edu.mapper.BookMapper">
+    <select id="getAllCategories" resultType="com.xx.edu.model.Category">
+        SELECT * FROM category
+    </select>
+    <select id="findCategoryByName" parameterType="String" resultType="com.xx.edu.model.Category">
+        SELECT * FROM category WHERE categoryName = #{categoryName}
+    </select>
+
+    <select id="getBooksByUserId" parameterType="int" resultType="com.xx.edu.model.Book">
+        SELECT * FROM bookinfo WHERE owners = #{userId}
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.xx.edu.model.Book">
+        SELECT * from bookinfo WHERE bookId = #{bookId}
+    </select>
+    <select id="findByName" parameterType="String" resultType="com.xx.edu.model.Book">
+        SELECT * FROM bookinfo where bookName = #{name}
+    </select>
+
+    <select id="getAllBooks" resultType="com.xx.edu.model.Book">
+        SELECT * FROM bookinfo
+    </select>
+
+    <select id="getRequestByUserId" parameterType="int" resultType="com.xx.edu.model.Request">
+        SELECT * FROM request WHERE ownerId = #{userId}
+    </select>
+
+    <insert id="insert" parameterType="com.xx.edu.model.Book">
+        INSERT INTO bookinfo VALUES (NULL, #{bookName}, #{categoryId}, #{description}, #{owners}, #{photo}, #{state})
+    </insert>
+
+    <insert id="newRequest" parameterType="com.xx.edu.model.Request">
+        INSERT INTO request VALUES (NULL, #{requesterId}, #{ownerId}, #{bookName}, #{state})
+    </insert>
+
+    <update id="update" parameterType="com.xx.edu.model.Book">
+        UPDATE bookinfo SET bookName = #{bookName}, categoryId = #{categoryId}, description = #{description}, owners = #{owners}, photo = #{photo}, state = #{state}
+        WHERE bookId = #{bookId}
+    </update>
+
+
+
+</mapper>
